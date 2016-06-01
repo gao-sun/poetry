@@ -1,0 +1,498 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	font-family: 'PingFang SC';
+	font-weight: 200;
+}
+
+.test {
+	font-size: 30px;
+	opacity: 0;
+}
+
+.name-overlay {
+	background-color: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.name-overlay .warning {
+	font-size: 22px;
+}
+
+.name-overlay .circle-anchor {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+}
+
+.name-overlay .circle {
+	width: 0;
+	height: 0;
+	border-radius: 50%;
+	background-color: white;
+}
+
+.name-overlay .line {
+	width: 100%;
+	text-align: center;
+	margin-top: 100px;
+}
+
+.name-overlay .input-name {
+	margin: 10px 0 0 10px;
+	padding: 10px 20px;
+	width: 30%;
+	outline: none;
+	border: none;
+	border-radius: 10px;
+	font-size: 30px;
+}
+
+.animation {
+	display: block !important;
+	margin-top: 200px;
+}
+
+.screen {
+	text-align: center;
+	display: none;
+}
+
+.screen .line {
+	font-size: 35px;
+}
+
+.screen .title {
+	font-size: 40px;
+	position: fixed;
+	top: 250px;
+	left: 50%;
+	text-align: right;
+}
+
+.animation .line {
+	opacity: 0;
+	text-align: center;
+}
+
+.sun,
+.rain {
+	position: fixed;
+	top: 150px;
+	width: 300px;
+	left: 20%;
+}
+
+.plane {
+	position: fixed;
+	width: 350px;
+	transform: rotate(-15deg);
+	left: -350px;
+	top: 350px;
+}
+
+.clock {
+	position: fixed;
+	top: 200px;
+	left: 20%;
+	border-radius: 50%;
+	width: 200px;
+	height: 200px;
+	border: 5px solid rgb(50,150,250);
+}
+
+.clock .hand {
+	height: 0px;
+	position: absolute;
+	border: 1px solid rgb(50,150,250);
+	top: 99px;
+	left: 99px;
+	transform-origin: 0 1px;
+}
+
+.clock .hand-min {
+	width: 90px;
+}
+
+.clock .hand-hour {
+	width: 40px;
+}
+
+.heart {
+	margin: 0 auto;
+	margin-top: -150px;
+	width: 650px;
+}
+
+.love-text {
+	position: fixed;
+	color: #ffb0bb;
+	top: 250px;
+	width: 100%;
+	text-align: center;
+	font-size: 50px;
+	font-weight: normal;
+}
+
+.thanks {
+	color: #444;
+	text-align: center;
+	font-size: 25px;
+	opacity: 0;
+}
+
+.thanks .strong {
+	color: black;
+	font-size: 30px;
+	font-weight: normal;
+	margin: 0 5px;
+}
+
+.fin-animation {
+	display: block !important;
+}
+
+.fin {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	color: white;
+	text-align: center;
+	font-size: 80px;
+	font-weight: bold;
+	padding-top: 250px;
+	opacity: 0;
+	z-index: 9999;
+	display: none;
+}
+
+.end {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	color: #ffb0bb;
+	text-align: center;
+	font-size: 60px;
+	padding-top: 260px;
+	text-align: center;
+	opacity: 0;
+	display: none;
+}
+
+/* Animations */
+
+.test {
+	animation-name: Test;
+	animation-duration: 3s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes Test {
+	50% { opacity: 1; }
+	to { opacity: 0; }
+}
+
+
+.screen-in {
+	animation-name: ScreenIn;
+	animation-duration: 3s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes ScreenIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.screen-out {
+	animation-name: ScreenOut;
+	animation-duration: 3s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes ScreenOut {
+	to {
+		opacity: 0;
+	}
+}
+
+.fin-animation.end-fade {
+	animation-name: EndFade;
+	animation-duration: 12s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes EndFade {
+	60% {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fin-animation.fin-fade {
+	animation-name: FinFade;
+	animation-duration: 12s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes FinFade {
+	40% {
+		opacity: 1;
+	}
+	60% {
+		opacity: 1;
+	}
+	to {
+		opacity: 0;
+	}
+}
+
+.animation .heart path {
+	stroke-dasharray: 200;
+  	stroke-dashoffset: 200;
+	animation-name: HeartDraw;
+	animation-duration: 6s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes HeartDraw {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+.animation .title,
+.animation .love-text {
+	animation-name: TitleFade;
+	animation-duration: 8s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes TitleFade {
+	from { opacity: 0; }
+	40% { opacity: 1; }
+	60% { opacity: 1; }
+	to { opacity: 0; }
+}
+
+.animation .hand-hour-rotate {
+	animation-name: HandHourRotate;
+	animation-duration: 12s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+}
+
+@keyframes HandHourRotate {
+	from { transform: rotate(0); }
+	to { transform: rotate(360deg); }
+}
+
+.animation .hand-min-rotate {
+	animation-name: HandMinRotate;
+	animation-duration: .5s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+}
+
+@keyframes HandMinRotate {
+	from { transform: rotate(0); }
+	to { transform: rotate(360deg); }
+}
+
+.animation .plane-fly {
+	animation-name: PlaneFly;
+	animation-duration: 8s;
+	animation-timing-function: linear;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes PlaneFly {
+	to { top: -200px; left: 70%; }
+}
+
+.animation .rain-jitter {
+	animation-name: RainJitter;
+	animation-duration: 1.2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-fill-mode: forwards;
+}
+
+@keyframes RainJitter {
+	from { transform: rotate(8deg); }
+	49.99% { transform: rotate(8deg); }
+	50% { transform: rotate(-8deg); }
+	99.99% { transform: rotate(-8deg); }
+	100% { transform: rotate(8deg); }
+}
+
+.animation .sun-leave {
+	animation-name: SunLeave;
+	animation-duration: 3s;
+	animation-timing-function: cubic-bezier(1,.27,.18,1);
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes SunLeave {
+	from {}
+	to { top: 500px; left: -550px; transform: scale(3, 3); }
+}
+
+.animation .sun-enter {
+	animation-name: SunEnter, SunRotate;
+	animation-duration: 3s, 2s;
+	animation-timing-function: linear, linear;
+	animation-iteration-count: 1, infinite;
+	animation-fill-mode: forwards, forwards;
+}
+
+@keyframes SunEnter {
+	from { left: -300px; }
+	to { left: 20%; }
+}
+
+@keyframes SunRotate {
+	from { transform: rotate(0); }
+	24.99% { transform: rotate(0); }
+	25% { transform: rotate(90deg); }
+	49.99% { transform: rotate(90deg); }
+	50% { transform: rotate(180deg); }
+	74.99% { transform: rotate(180deg); }
+	75% { transform: rotate(270deg); }
+	99.99% { transform: rotate(270deg); }
+	to { transform: rotate(360deg); }
+}
+
+.animation .line {
+	animation-name: TextShow;
+	animation-duration: 3s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+.animation .line-2 {
+	animation-delay: 3s;
+}
+
+.animation .line-3 {
+	animation-delay: 6s;
+}
+
+@keyframes TextShow {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.input-breath {
+	animation-name: ShadowBreath;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-iteration-count: infinite;
+}
+
+@keyframes ShadowBreath {
+	from { box-shadow: 0 0 0px 0px white; }
+	50% { box-shadow: 0 0 50px 3px white; }
+	to { box-shadow: 0 0 0px 0px white; }
+}
+
+.input-shrink {
+	animation-name: Shrink;
+	animation-duration: 2s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+@keyframes Shrink {
+	to { width: 0; padding: 10px 0; }
+}
+
+.circle-spread {
+	animation-name: CircleSpread;
+	animation-duration: 5s;
+	animation-timing-function: ease;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-delay: 3s;
+}
+
+@keyframes CircleSpread {
+	8% {
+		width: 50px;
+		height: 50px;
+		margin-top: -25px;
+		margin-left: -25px;
+		border-radius: 50%;
+	}
+	25% {
+		width: 50px;
+		height: 50px;
+		margin-top: -25px;
+		margin-left: -25px;
+		border-radius: 50%;
+	}
+	33% {
+		width: 100px;
+		height: 100px;
+		margin-top: -50px;
+		margin-left: -50px;
+		border-radius: 50%;
+	}
+	50% {
+		width: 100px;
+		height: 100px;
+		margin-top: -50px;
+		margin-left: -50px;
+		border-radius: 50%;
+	}
+	75% {
+		width: 1000px;
+		height: 1000px;
+		margin-top: -500px;
+		margin-left: -500px;
+		border-radius: 50%;
+	}
+	to {
+		width: 2000px;
+		height: 1000px;
+		margin-top: -500px;
+		margin-left: -1000px;
+		border-radius: 0;
+	}
+}
